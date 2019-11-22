@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import SignUp from "./components/SignUp";
 import Register from "./components/Register";
 import {Provider} from "react-redux";
 import {Router, Route, Switch} from "react-router";
 import store from "./store/store";
 import {history} from "./store/store";
 import Home from "./components/Home";
+import Login from "./components/Login";
 
 function App() {
     return (
@@ -16,6 +16,8 @@ function App() {
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/register" exact component={Register}/>
+                        <Route path="/login" exact component={Login}/>
+                        <Route path="/error" exact component={Login}/>
                     </Switch>
                 </Router>
             </Provider>

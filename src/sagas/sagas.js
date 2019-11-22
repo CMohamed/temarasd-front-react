@@ -1,5 +1,4 @@
-import {put, takeEvery, call, fork, all, select} from "redux-saga/effects"
-import {register} from "../actions/actions";
+import {put, takeEvery, fork, all} from "redux-saga/effects"
 import {push} from "react-router-redux";
 import {REGISTER} from "../actions/actionsTypes";
 

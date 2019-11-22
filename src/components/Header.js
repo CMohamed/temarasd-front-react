@@ -1,39 +1,49 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
+import {createStyles, withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import {Link} from "react-router-dom";
 
-const styles = makeStyles(theme => ({
+const styles = createStyles(theme => ({
     root: {
         flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
     },
     title: {
         flexGrow: 1,
     },
+    removeUnderline: {
+        textDecoration: "none",
+        color: "white"
+    }
 }));
 
 class Header extends Component {
     render() {
+        console.log(this.props);
         const {classes} = this.props;
+        console.log(classes);
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="static" >
                     <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <IconButton edge="start" color="inherit" aria-label="menu">
                             <MenuIcon/>
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            News
+                            Temara service directory
                         </Typography>
-                        <Button color="inherit">Login</Button>
+
+                        <Link to="/login">
+                            <Button color="inherit" className={classes.removeUnderline}>Login</Button>
+                        </Link>
+                        <Link to="/register">
+                            <Button color="inherit" className={classes.removeUnderline}>Register</Button>
+                        </Link>
                     </Toolbar>
                 </AppBar>
             </div>
